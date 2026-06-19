@@ -1,0 +1,70 @@
+{
+  "task_order": ["red", "green", "blue"],
+  "start_arm_id": "start_arm",
+  "startup_ping_interval": 0.5,
+  "tasks": {
+    "red": {
+      "car_id": "red_car",
+      "target_arm_id": "red_target_arm",
+      "color": "r",
+      "initial_straight_distance": 0.2,
+      "target_pose": {
+        "x": 8.3,
+        "y": -1.44,
+        "heading": 1.5708
+      },
+      "target_approach_distance": 0.6,
+      "target_vision_settle_time": 0.3,
+      "target_no_detection_miss_count": 80,
+      "return_pose": {
+        "x": -0.3,
+        "y": -2.5,
+        "heading": 3.1416
+      },
+      "pre_return_straight_distance": 0.0,
+      "next_car_delay": 2.0
+    },
+    "green": {
+      "car_id": "green_car",
+      "target_arm_id": "green_target_arm",
+      "color": "g",
+      "initial_straight_distance": 0.5,
+      "target_pose": {
+        "x": 8.37,
+        "y": -7.4,
+        "heading": -1.5708
+      },
+      "target_approach_distance": 0.55,
+      "target_vision_settle_time": 0.3,
+      "target_no_detection_miss_count": 200,
+      "return_pose": {
+        "x": -0.3,
+        "y": -3.0,
+        "heading": -3.1416
+      },
+      "pre_return_straight_distance": 0.0,
+      "next_car_delay": 2.0
+    },
+    "blue": {
+      "car_id": "blue_car",
+      "target_arm_id": "blue_target_arm",
+      "color": "b",
+      "initial_straight_distance": 0.9,
+      "target_pose": {
+        "x": -0.23,
+        "y": -7.9,
+        "heading": -1.5708
+      },
+      "target_approach_distance": 0.45,
+      "target_vision_settle_time": 0.3,
+      "target_no_detection_miss_count": 80,
+      "return_pose": {
+        "x": -0.3,
+        "y": -3.5,
+        "heading": 3.1416
+      },
+      "pre_return_straight_distance": -0.5,
+      "next_car_delay": 2.0
+    }
+  }
+}

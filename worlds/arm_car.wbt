@@ -1,0 +1,492 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "../protos/robodyno_webots/robots/SixDofCollaborationRobot.proto"
+EXTERNPROTO "../protos/robodyno_webots/objects/BaseBoard.proto"
+EXTERNPROTO "../protos/robodyno_webots/camera/CameraBracket.proto"
+EXTERNPROTO "../protos/robodyno_webots/others/CustomBox.proto"
+EXTERNPROTO "../protos/robodyno_webots/camera/RobodynoCamera.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/appearances/protos/Parquetry.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/tables/protos/Table.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/husarion/rosbot_xl/protos/RosbotXl.proto"
+EXTERNPROTO "../protos/robodyno_webots/others/CustomStorageBox.proto"
+EXTERNPROTO "../protos/robodyno_webots/endEffector/Vacuum_Gripper.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/advertising_board/protos/AdvertisingBoard.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/apartment_structure/protos/Wall.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.42832638549334073 -0.7093411193024753 0.5597961092727614 4.636729665197216
+  position 0.03722570466192843 2.657700723038892 21.366735968740905
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  translation 4 -4 0
+  floorSize 10 10
+  floorAppearance Parquetry {
+    type "light strip"
+  }
+  wallHeight 0.5
+}
+Wall {
+  translation -0.49 -0.600003 0
+  rotation 0 0 1 1.5708
+  size 0.05 1 0.5
+}
+DEF NAV_WALL_1 Wall {
+  translation 2 -5.1 0
+  name "wall(3)"
+  size 0.08 4.8 0.5
+}
+DEF NAV_WALL_2 Wall {
+  translation 4.4 -2.2 0
+  size 3.2 0.08 0.5
+}
+DEF NAV_WALL_2 Wall {
+  translation 4.4 -0.56 0
+  rotation 0 0 1 -1.5707953071795862
+  name "wall(1)"
+  size 3.2 0.08 0.5
+}
+DEF NAV_WALL_3 Wall {
+  translation 6.6 -5.4 0
+  size 0.08 4.4 0.5
+}
+DEF NAV_WALL_4 Wall {
+  translation 3.55 -6.67 0
+  size 3 0.08 0.5
+}
+DEF NAV_WALL_4 Wall {
+  translation 0.51 -6.8 0
+  name "wall(2)"
+  size 3 0.08 0.5
+}
+DEF NAV_WALL_5 Wall {
+  translation 5.76 -4.2 0
+  size 1.6 0.08 0.5
+}
+DEF NAV_WALL_5 Wall {
+  translation 7.8 -4.76 0
+  name "wall(4)"
+  size 2.3 0.08 0.5
+}
+SixDofCollaborationRobot {
+  translation 8.5 -1 0.13
+  name "red_target_arm"
+  baseChildren [
+    Emitter {
+      name "red_target_emitter"
+      channel 1
+    }
+    Receiver {
+      name "red_target_receiver"
+      channel 1
+    }
+    BaseBoard {
+      translation 0.1 0.1 -0.01
+    }
+  ]
+  endChildren [
+    Vacuum_Gripper {
+    }
+  ]
+  controller "red_target_arm"
+}
+SixDofCollaborationRobot {
+  translation 8.5 -8.1 0.13
+  name "green_target_arm"
+  baseChildren [
+    Emitter {
+      name "green_target_emitter"
+      channel 1
+    }
+    Receiver {
+      name "green_target_receiver"
+      channel 1
+    }
+    BaseBoard {
+      translation 0.1 0.1 -0.01
+    }
+  ]
+  endChildren [
+    Vacuum_Gripper {
+    }
+  ]
+  controller "green_target_arm"
+}
+SixDofCollaborationRobot {
+  translation 0.2 -8.5 0.13
+  name "blue_target_arm"
+  baseChildren [
+    Emitter {
+      name "blue_target_emitter"
+      channel 1
+    }
+    Receiver {
+      name "blue_target_receiver"
+      channel 1
+    }
+    BaseBoard {
+      translation 0.1 0.1 -0.01
+    }
+  ]
+  endChildren [
+    Vacuum_Gripper {
+    }
+  ]
+  controller "blue_target_arm"
+}
+RosbotXl {
+  translation -1.1638e-10 -0.24999 0.0011497
+  rotation -0.9958688145377091 -0.09079788309056057 0.0010240398092913783 0.00168016
+  name "red_car"
+  controller "red_car"
+  supervisor TRUE
+  lidarSlot [
+    CustomStorageBox {
+      translation -0.0299994 2e-07 0
+      rotation 0 0 -1 -5.307179586466759e-06
+      box_number "1"
+    }
+    Receiver {
+      rotation 0.5773516024667703 -0.5773476024695255 -0.5773516026233435 2.0944049998434275
+      name "red_car_receiver"
+      channel 1
+    }
+    Emitter {
+      rotation 0.5773516024659151 -0.5773476024686702 -0.5773516026250539 2.094404999840862
+      name "red_car_emitter"
+      channel 1
+    }
+  ]
+}
+RosbotXl {
+  translation -0.350003 -0.26 0.00126081
+  rotation 0.09079760144813272 -0.9958693661588982 -3.342963493828908e-05 0.001680161942244532
+  name "green_car"
+  controller "green_car"
+  supervisor TRUE
+  lidarSlot [
+    CustomStorageBox {
+      translation -0.0299994 2e-07 0
+      rotation 0 0 -1 -5.307179586466759e-06
+      box_number "1"
+    }
+    Emitter {
+      name "green_car_emitter"
+      channel 1
+    }
+    Receiver {
+      name "green_car_receiver"
+      channel 1
+    }
+  ]
+}
+RosbotXl {
+  translation -0.709099 -0.25978 0.0082299
+  rotation 0.09078828010479584 -0.9958702160406779 -3.1602317601097304e-05 0.00159010179859303
+  name "blue_car"
+  controller "blue_car"
+  supervisor TRUE
+  lidarSlot [
+    CustomStorageBox {
+      translation -0.0299994 2e-07 0
+      rotation 0 0 -1 -5.307179586466759e-06
+      box_number "1"
+    }
+    Emitter {
+      name "blue_car_emitter"
+      channel 1
+    }
+    Receiver {
+      name "blue_car_receiver"
+      channel 1
+    }
+  ]
+}
+CustomBox {
+  translation 0.11062 0.11166 0.129205
+  rotation 0.01654278949593384 -0.021343918854804942 0.9996353201261011 0
+  name "red box"
+  size 0.03 0.03 0.05
+  mass 0.1265
+  castShadows FALSE
+}
+CustomBox {
+  translation 0.04970592090914335 0.19961408305792488 0.13239556020041435
+  rotation 0.01373502050182967 -0.001740554462754061 -0.99990415524788 1.0508853655182175
+  name "red box(1)"
+  size 0.03 0.03 0.05
+  mass 0.1265
+  castShadows FALSE
+}
+CustomBox {
+  translation -0.597882 1.21217 0
+  rotation 0.016542747701429127 -0.02134388698462548 0.9996353214982324 0.5201753851751945
+  name "red box(2)"
+  size 0.03 0.03 0.05
+  mass 0.1265
+  castShadows FALSE
+}
+CustomBox {
+  translation 0.07679034484862644 0.15496579332372373 0.1321319713846856
+  rotation 0.009127640595104037 -0.015691615743121768 0.9998352161094032 0.785109613511565
+  name "blue box"
+  size 0.03 0.03 0.05
+  mass 0.1265
+  castShadows FALSE
+  topAppearance PBRAppearance {
+    baseColor 0 0 1
+    roughness 1
+    metalness 0
+  }
+  bottomAppearance PBRAppearance {
+    baseColor 0 0 1
+    roughness 1
+    metalness 0
+  }
+  leftAppearance PBRAppearance {
+    baseColor 0 0 1
+    roughness 1
+    metalness 0
+  }
+  rightAppearance PBRAppearance {
+    baseColor 0 0 1
+    roughness 1
+    metalness 0
+  }
+  frontAppearance PBRAppearance {
+    baseColor 0 0 1
+    roughness 1
+    metalness 0
+  }
+  backAppearance PBRAppearance {
+    baseColor 0 0 1
+    roughness 1
+    metalness 0
+  }
+}
+CustomBox {
+  translation 0.030382399124532732 0.13257106589051937 0.13149727824393156
+  rotation 2.8423779897840606e-05 -0.008754570056321942 0.9999616776133062 1.8322301456057475
+  name "green box"
+  size 0.03 0.03 0.05
+  mass 0.1265
+  castShadows FALSE
+  topAppearance PBRAppearance {
+    baseColor 0 1 0
+    roughness 1
+    metalness 0
+  }
+  bottomAppearance PBRAppearance {
+    baseColor 0 1 0
+    roughness 1
+    metalness 0
+  }
+  leftAppearance PBRAppearance {
+    baseColor 0 1 0
+    roughness 1
+    metalness 0
+  }
+  rightAppearance PBRAppearance {
+    baseColor 0 1 0
+    roughness 1
+    metalness 0
+  }
+  frontAppearance PBRAppearance {
+    baseColor 0 1 0
+    roughness 1
+    metalness 0
+  }
+  backAppearance PBRAppearance {
+    baseColor 0 1 0
+    roughness 1
+    metalness 0
+  }
+}
+CustomBox {
+  translation 0.05296515921308063 0.08685656250522021 0.13118427309799696
+  rotation 2.842377613480442e-05 -0.008754570064707529 0.9999616776132331 1.8322301455456567
+  name "green box(1)"
+  size 0.03 0.03 0.05
+  mass 0.1265
+  castShadows FALSE
+  topAppearance PBRAppearance {
+    baseColor 0 1 0
+    roughness 1
+    metalness 0
+  }
+  bottomAppearance PBRAppearance {
+    baseColor 0 1 0
+    roughness 1
+    metalness 0
+  }
+  leftAppearance PBRAppearance {
+    baseColor 0 1 0
+    roughness 1
+    metalness 0
+  }
+  rightAppearance PBRAppearance {
+    baseColor 0 1 0
+    roughness 1
+    metalness 0
+  }
+  frontAppearance PBRAppearance {
+    baseColor 0 1 0
+    roughness 1
+    metalness 0
+  }
+  backAppearance PBRAppearance {
+    baseColor 0 1 0
+    roughness 1
+    metalness 0
+  }
+}
+CustomBox {
+  translation 0.12163 0.06456 0.130107
+  rotation 0.009127640614820064 -0.015691615742697184 0.9998352161092297 0
+  name "blue box(1)"
+  size 0.03 0.03 0.05
+  mass 0.1265
+  castShadows FALSE
+  topAppearance PBRAppearance {
+    baseColor 0 0 1
+    roughness 1
+    metalness 0
+  }
+  bottomAppearance PBRAppearance {
+    baseColor 0 0 1
+    roughness 1
+    metalness 0
+  }
+  leftAppearance PBRAppearance {
+    baseColor 0 0 1
+    roughness 1
+    metalness 0
+  }
+  rightAppearance PBRAppearance {
+    baseColor 0 0 1
+    roughness 1
+    metalness 0
+  }
+  frontAppearance PBRAppearance {
+    baseColor 0 0 1
+    roughness 1
+    metalness 0
+  }
+  backAppearance PBRAppearance {
+    baseColor 0 0 1
+    roughness 1
+    metalness 0
+  }
+}
+Table {
+  translation 0.1 0.1 0
+  size 0.35 0.35 0.105
+}
+Table {
+  translation 8.6 -0.9 0
+  name "table(1)"
+  size 0.35 0.35 0.13
+}
+Table {
+  translation 8.6 -8 0
+  name "table(2)"
+  size 0.35 0.35 0.13
+}
+Table {
+  translation 0.3 -8.39 0
+  name "table(3)"
+  size 0.35 0.35 0.13
+}
+RobodynoCamera {
+  translation 0.105027 0.130027 0.7
+  rotation -0.7071067804277614 -0.7071067804277614 4.6326785614512114e-05 3.14159
+  name "start_camera"
+  controller "start_camera"
+}
+RobodynoCamera {
+  translation 8.305 -0.87 0.730005
+  rotation -0.7071067804277614 -0.7071067804277614 4.6326785614512114e-05 3.14159
+  name "red_target_camera"
+  controller "red_target_camera"
+}
+RobodynoCamera {
+  translation 8.3 -7.97 0.73
+  rotation -0.7071067804277614 -0.7071067804277614 4.6326785614512114e-05 3.14159
+  name "green_target_camera"
+  controller "green_target_camera"
+}
+RobodynoCamera {
+  translation 0 -8.37 0.73
+  rotation -0.7071067804277614 -0.7071067804277614 4.6326785614512114e-05 3.14159
+  name "blue_target_camera"
+  controller "blue_target_camera"
+}
+SixDofCollaborationRobot {
+  translation 0 0 0.1
+  name "start_arm"
+  baseChildren [
+    Emitter {
+      name "start_arm_emitter"
+      channel 1
+    }
+    Receiver {
+      name "start_arm_receiver"
+      channel 1
+    }
+    CameraBracket {
+      translation 0.25 0.2 0.006
+      rotation 0 0 1 3.1415
+    }
+    BaseBoard {
+      translation 0.1 0.1 -0.01
+    }
+  ]
+  endChildren [
+    Vacuum_Gripper {
+    }
+  ]
+  controller "start_arm"
+}
+Robot {
+  children [
+    Emitter {
+      name "msg_manage_emitter"
+      channel 1
+    }
+    Receiver {
+      name "msg_manage_receiver"
+      channel 1
+    }
+  ]
+  name "msg_manager"
+  controller "msg_manager"
+}
+AdvertisingBoard {
+  translation 8.96 -0.93 0
+  displayWidth 1
+  displayHeight 1
+  frameThickness 0.1
+}
+AdvertisingBoard {
+  translation 0.02 -8.87 0
+  rotation 0 0 1 -1.5707953071795862
+  name "advertising board(2)"
+  displayWidth 1
+  displayHeight 1
+  frameThickness 0.1
+}
+AdvertisingBoard {
+  translation 8.96 -8 0
+  name "advertising board(1)"
+  displayWidth 1
+  displayHeight 1
+  frameThickness 0.1
+}
